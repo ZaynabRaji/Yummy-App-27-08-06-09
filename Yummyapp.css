@@ -1,7 +1,8 @@
 .Repas, .Recette{
     background-image: url("backgroundimage.png");
     background-repeat: no-repeat;
-    background-size:contain;
+    padding: 50px 20px;
+opacity: 0.8;
 }
 
 .nav {

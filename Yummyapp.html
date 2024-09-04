@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- page d'acceuil -->
-<main class="Accueil">
+<div class="Accueil">
     <nav class="navMenu">
         <a class="nav" href="#section_home">Accueil</a>
         <a class="nav" href="#section_Repas">Mes Repas</a>
@@ -24,7 +24,7 @@
     <button class="btn1">Créer mon plan</button>
     <button class="btn2">Ajoute recette</button>
     </div>
-</main>
+</div>
 <!-- page repas -->
 <div class="Repas">
 <div class="Semaine">    
@@ -38,12 +38,12 @@
 </div>
 </div>
 <!-- page recette -->
-    <form class="addrecette">
-        <input type="text" id="title" placeholder="Nom recette" />
+    <form class="formRecette">
+        <input type="text" id="titre" placeholder="Nom recette" />
         <textarea id="Recette" placeholder="détail recette..." rows="3"></textarea>
         <button type="submit"><i class="fa-solid fa-plus"></i></button>
     </form>
-    <div id="recette"></div>
+    <div id="recetteContainer"></div>
 
 <script src="Yummyapp.js"></script>
 </body>
