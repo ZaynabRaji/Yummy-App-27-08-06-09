@@ -1,0 +1,12 @@
+.Repas, .Recette{
+    background-image: url("backgroundimage.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+
+.nav {
+    font-size: 16px;
+    padding-right: 10px;
+    padding-left: 10px;
+    display : center;
+}
