@@ -20,11 +20,11 @@ function addRecette() {
     Détails.value = "";
 }
 
-
 function displayRecettes() {
     recetteContainer.innerHTML = "";
     recettes.forEach((recette, index) => {
         const recetteElement = document.createElement("div");
+        recetteElement.className = "recetteElement";
         recetteElement.textContent = recette.text;
 
         const Recipe = document.createElement("h3");
