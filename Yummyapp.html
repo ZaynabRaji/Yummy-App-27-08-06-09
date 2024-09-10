@@ -1,85 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="Yummyapp.css" />
+    <title>Yummy Application</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-  <link rel="stylesheet" href="Yummyapp.css" />
-  <title>Yummy Application</title>
-</head>
+  <body>
+    <!-- page d'accueil -->
+    <div class="pageAccueil">
+      <nav class="navMenu">
+        <a class="Logo"
+          ><img src="Logo.jpeg" alt="logo Yummyapp" width="30px" height="30px"
+        /></a>
+        <a class="nav" href="#section_home">Accueil</a>
+        <a class="nav" href="#section_Repas">Mes Repas</a>
+        <a class="nav" href="#section_Recettes">Mes Recettes</a>
+        <a class="nav">Profil</a>
+      </nav>
+      <div>
+        <h1 class="title">Yummy App</h1>
+        <h3>Votre assistant culinaire personnalisé</h3>
+        <p>
+          Notre organisateur va vous permettre de preparer vos repas en avance
+          ainsi qu’enregistrer vos recettes preferées
+        </p>
+        <button class="btn1">Créer mon plan</button>
+        <button class="btn2">Ajoute recette</button>
+      </div>
+    </div>
+    <!-- page repas -->
+    <div class="pageRepas">
+      <div class="Semaine">
+        <button onclick="cardDay()" class="btn">Lundi</button>
+        <button onclick="cardDay()" class="btn">Mardi</button>
+        <button onclick="cardDay()" class="btn">Mercredi</button>
+        <button onclick="cardDay()" class="btn">Jeudi</button>
+        <button onclick="cardDay()" class="btn">Vendredi</button>
+        <button onclick="cardDay()" class="btn">Samedi</button>
+        <button onclick="cardDay()" class="btn">Dimanche</button>
+      </div>
+      <!-- We can use the contenteditable="true" -->
+      <div id="mealType">
+        <div id="breakfastContainer">
+          <h3>Petit Déjeuner</h3>
+          <form class="formMeal">
+            <input
+              type="text"
+              id="mealNameBreakfast"
+              placeholder="Nom du plat"
+            />
+            <button type="submit"><i class="fa-solid fa-plus"></i></button>
+          </form>
+          <div id="divpetitDej"></div>
+        </div>
+        <div id="lunchContainer">
+          <h3>Déjeuner</h3>
+          <form class="formMeal">
+            <input type="text" id="mealNamelunch" placeholder="Nom du plat" />
+            <button type="submit"><i class="fa-solid fa-plus"></i></button>
+          </form>
+          <div id="divDej"></div>
+        </div>
+        <div id="dinnerContainer">
+          <h3>Diner</h3>
+          <form class="formMeal">
+            <input type="text" id="mealNameDinner" placeholder="Nom du plat" />
+            <button type="submit"><i class="fa-solid fa-plus"></i></button>
+          </form>
+          <div id="divdiner"></div>
+        </div>
+      </div>
+    </div>
 
-<body>
-  <!-- page d'accueil -->
-  <div class="pageAccueil">
-    <nav class="navMenu">
-      <a class="Logo"><img src="Logo.jpeg" alt="logo Yummyapp" width="30px" height="30px" /></a>
-      <a class="nav" href="#section_home">Accueil</a>
-      <a class="nav" href="#section_Repas">Mes Repas</a>
-      <a class="nav" href="#section_Recettes">Mes Recettes</a>
-      <a class="nav">Profil</a>
-    </nav>
-    <div>
-      <h1 class="title">Yummy App</h1>
-      <h3>Votre assistant culinaire personnalisé</h3>
-      <p>
-        Notre organisateur va vous permettre de preparer vos repas en avance
-        ainsi qu’enregistrer vos recettes preferées
-      </p>
-      <button class="btn1">Créer mon plan</button>
-      <button class="btn2">Ajoute recette</button>
-    </div>
-  </div>
-  <!-- page repas -->
-  <div class="PageRepas">
-    <div class="Semaine">
-        <button onclick="cardDay()" class="btn">Lundi</button> 
-        <button onclick="cardDay()" class="btn">Mardi</button> 
-        <button onclick="cardDay()" class="btn">Mercredi</button> 
-        <button onclick="cardDay()" class="btn">Jeudi</button> 
-        <button onclick="cardDay()" class="btn">Vendredi</button> 
-        <button onclick="cardDay()" class="btn">Samedi</button> 
-        <button onclick="cardDay()" class="btn">Dimanche</button>    
-    </div>
-    <div id="mealType"> 
-    <div id="breakfastContainer">
-       <h3>Petit Déjeuner</h3> 
-       <form class="formMeal">
-        <input type="text" id="mealName" placeholder="Nom du plat" />
+    <!-- page recette -->
+    <div class="pageRecette">
+      <form id="formRecette">
+        <input type="text" id="titre" placeholder="Nom recette" />
+        <textarea
+          id="Recette"
+          placeholder="détail recette..."
+          rows="3"
+        ></textarea>
         <button type="submit"><i class="fa-solid fa-plus"></i></button>
-    </form>
-    <div id="divpetitDej"></div>
+      </form>
+      <div id="recetteContainer"></div>
     </div>
-    <div id="lunchContainer">
-        <h3>Déjeuner</h3> 
-       <form class="formMeal">
-        <input type="text" id="mealName" placeholder="Nom du plat" />
-        <button type="submit"><i class="fa-solid fa-plus"></i></button>
-    </form>
-    <div id="divDej"></div>
-    </div>
-    <div id="dinnerContainer">
-        <h3>Diner</h3> 
-       <form class="formMeal">
-        <input type="text" id="mealName" placeholder="Nom du plat" />
-        <button type="submit"><i class="fa-solid fa-plus"></i></button>
-    </form>
-    <div id="divdiner"></div>
-    </div>
-    </div>
-    </div>
-
-  <!-- page recette -->
-  <div class="pageRecette">
-    <form class="formRecette">
-      <input type="text" id="titre" placeholder="Nom recette" />
-      <textarea id="Recette" placeholder="détail recette..." rows="3"></textarea>
-      <button type="submit"><i class="fa-solid fa-plus"></i></button>
-    </form>
-    <div id="recetteContainer"></div>
-  </div>
-  <script src="YummyappREPAS.js"></script>
-  <script src="YummyappRECETTE.js"></script>
-</body>
-
+    <script src="YummyappREPAS.js"></script>
+    <script src="YummyappRECETTE.js"></script>
+  </body>
 </html>
