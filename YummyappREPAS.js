@@ -1,15 +1,7 @@
-const breakfastContainer = document.getElementById('breakfastContainer');
-const lunchContainer = document.getElementById('lunchContainer');
-const dinnerContainer = document.getElementById('dinnerContainer');
-const mealType = document.getElementById('mealType');
-const formMeal = document.querySelector('form');
-
-
-function cardDay() {
-    if(mealType.style.display === "none"){
-        mealType.style.display = "block";
+const planner = document.getElementById('planner');
+plannerArray = Array.from(planner);
+planner = JSON.parse(localStorage.getItem('planner')) || [];
+function saveplanner() {
+    localStorage.setItem('planner', JSON.stringify(planner));
     }
-    else{
-        mealType.style.display = "none" ;
-    }
-}
+    displayplanner();
